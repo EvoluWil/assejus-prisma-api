@@ -3,12 +3,11 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT);
-
   app.enableCors({
     credentials: true,
     preflightContinue: false,
     optionsSuccessStatus: 204,
+    origin: 'http://assejusonline.com.br',
     allowedHeaders: [
       'X-Requested-With',
       'X-HTTP-Method-Override',
@@ -21,5 +20,6 @@ async function bootstrap() {
     ],
     methods: 'GET, POST, PUT, DELETE, UPDATE, OPTIONS',
   });
+  await app.listen(process.env.PORT);
 }
 bootstrap();
