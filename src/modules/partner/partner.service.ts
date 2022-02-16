@@ -12,7 +12,9 @@ export class PartnerService {
   }
 
   async findOne(id: string) {
-    const partner = await this.prisma.partner.findUnique({ where: { id } });
+    const partner = await this.prisma.partner.findUnique({
+      where: { id: +id },
+    });
     if (!partner) {
       throw new NotFoundException(`Partner id ${id}, not found`);
     }
@@ -25,7 +27,7 @@ export class PartnerService {
 
   async update(id: string, updatePartnerDto: UpdatePartnerDto) {
     const partner = await this.prisma.partner.update({
-      where: { id },
+      where: { id: +id.toString() },
       data: updatePartnerDto,
     });
 
@@ -37,7 +39,7 @@ export class PartnerService {
 
   async remove(id: string) {
     const partner = await this.prisma.partner.delete({
-      where: { id },
+      where: { id: +id },
     });
     if (!partner) {
       throw new NotFoundException(`Partner id ${id}, not found`);

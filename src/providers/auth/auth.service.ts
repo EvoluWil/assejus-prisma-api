@@ -37,7 +37,7 @@ export class AuthService {
     if (!passwordMatched)
       throw new BadRequestException('Incorrect email/password combination');
 
-    const token = this.generateToken(user.id, email);
+    const token = this.generateToken(user.id.toString(), email);
 
     return {
       user,
