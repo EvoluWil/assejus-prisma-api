@@ -27,6 +27,7 @@ import { EnsureAuthenticated } from './providers/middlewares/ensure.authenticate
 })
 export class AppModule implements NestModule {
   ensureAuthenticatedExclude = [
+    { path: '/', method: RequestMethod.GET },
     { path: '/partner', method: RequestMethod.GET },
     { path: '/user', method: RequestMethod.POST },
     { path: '/auth/sign-in', method: RequestMethod.POST },
