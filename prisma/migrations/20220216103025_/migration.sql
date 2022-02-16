@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "partners" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "type" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE "partners" (
 
 -- CreateTable
 CREATE TABLE "users" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "firstName" TEXT NOT NULL,
     "lastName" TEXT NOT NULL,
     "email" TEXT NOT NULL,

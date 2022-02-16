@@ -7,12 +7,12 @@ generator client {
 
 datasource db {
   provider          = "postgresql"
-  url               = env("DATABASE_URL")
+  url               = env("DATABASE_URL_LOCAL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model Partner {
-  id          Int     @id @default(autoincrement())
+  id          String  @id @default(uuid())
   type        String
   name        String
   description String
@@ -30,7 +30,7 @@ model Partner {
 }
 
 model User {
-  id        Int     @id @default(autoincrement())
+  id        String  @id @default(uuid())
   firstName String
   lastName  String
   email     String  @unique

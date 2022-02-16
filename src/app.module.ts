@@ -25,8 +25,7 @@ import { EnsureAuthenticated } from './providers/middlewares/ensure.authenticate
   controllers: [AppController, AuthController],
   providers: [AppService, PrismaService, AuthService],
 })
-export class AppModule {}
-/* export class AppModule implements NestModule {
+export class AppModule implements NestModule {
   ensureAuthenticatedExclude = [
     { path: '/', method: RequestMethod.GET },
     { path: '/partner', method: RequestMethod.GET },
@@ -46,4 +45,3 @@ export class AppModule {}
       });
   }
 }
- */
