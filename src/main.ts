@@ -7,7 +7,7 @@ async function bootstrap() {
     credentials: true,
     preflightContinue: false,
     optionsSuccessStatus: 204,
-    origin: 'http://assejusonline.com.br',
+    origin: ['https://assejusonline.com.br', 'http://localhost:3000'],
     allowedHeaders: [
       'X-Requested-With',
       'X-HTTP-Method-Override',
